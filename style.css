@@ -1,26 +1,150 @@
-body {
-    min-height: 100vh;
-    background-color: #e5e5f7;
-    opacity: 1;
-    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e5e5f7 16px),
-        repeating-linear-gradient(#E0E0E8, #E6EFC7);
-}
-h1 {
-  color: red;
-  text-align: center;
-  font-family: "Alegreya Sans SC", "Alegreya Sans", "Alegreya", sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:opsz@8..144&family=Alegreya+Sans:opsz@8..144&display=swap");
 
-    body {
+body {
+  min-height: 100vh;
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #8A784F 16px), repeating-linear-gradient( #e6efc7);
   font-family: "Alegreya Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
 
 }
-
-h1, h2, h3  {
+h1, h2, h3 {
   font-family: "Alegreya", serif;
   font-optical-sizing: auto;
   font-weight: 700;
-  font-style: bold;
 }
+
+p {
+  color: #000;
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 24px;
+  line-height: 25px;
+  letter-spacing: 0.4px;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: 0.32px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 0.32px;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 36px; /* Increased from 28px to provide better readability */
+  letter-spacing: 0.32px;
+  font-weight: 700;
+}
+
+/* Navigation layout */
+nav[aria-label="Main navigation"] {
+  display: flex;
+  align-items: center;
+  justify-content:baseline;
+  padding:0%;
+  background-color: var(--light-brown);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  fill: #ffffff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  align-self: focus;
+  outline: none;
+  border: none;
+}
+
+.nav-logo img {
+  height: 175px;
+  width: 500px;
+  background:transparent; /* Makes the entire SVG completely transparent */
+  forced-color-adjust: auto
+  outline: none;
+  border: none; 
+}
+
+
+.nav-right,
+.flex-right {
+  display: flex;
+  align-items: center;
+}
+
+#logo_outer {
+  width: auto;
+  height: auto;
+  /* Use the project asset location for the logo */
+  background-image: url("assets/images/txt+Lgo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+#Lgo_outer img {
+  display: none; /* Hide the old image */
+}
+:root {
+  --light-green: #e8efc7;
+  --mid-green: #AEC8A7;
+  --light-brown: #8A784F;
+  --moss-green: #3b3b1b;
+}
+
+/* global styles */
+body, 
+html {
+ overflow-x: hidden;
+ scroll-behavior: smooth; 
+}
+
+.home #scroll-up {
+  display: none;   
+}
+#scroll-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #AEC8A7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+#scroll-up:hover {
+  background-color: #8A784F;
+}
+
+/* Ensure all paragraph text uses Alegreya Sans (including inline elements) */
+p, p * {
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+.nav-logo {
+  background-color:transparent; /* Makes the entire SVG completely transparent */
+}
+
+.identity{
+display: flex;
+flex-direction: column; 
+align-items: center;
+justify-content: center;
+gap: 8px;
+text-align:center;
+padding: 16px;
+} 
