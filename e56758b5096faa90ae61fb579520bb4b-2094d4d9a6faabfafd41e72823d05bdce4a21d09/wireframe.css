@@ -26,7 +26,7 @@ body {
 main {
     max-width: 1200px;
     margin: 0 auto;
-    background: white;
+    background: var(--light-green);
     border: 2px solid #666;
     border-radius: 8px;
     padding: 40px;
@@ -102,14 +102,15 @@ nav::before {
     outline: 2px solid #005fcc;
     outline-offset: 2px;
     box-shadow: 0 0 0 3px rgba(0, 95, 204, 0.3);
-    border-radius: 50%;
+    border-radius: 6px; /* match rectangular logo rounded corners */
 }
 
 .nav-logo-circle {
-    width: 50px;
-    height: 50px;
+    /* Use a rectangular container to fit the textual SVG logo */
+    width: 150px;
+    height: 40px;
     border: 2px solid #666;
-    border-radius: 50%;
+    border-radius: 6px;
     background: white;
     display: flex;
     align-items: center;
@@ -120,11 +121,21 @@ nav::before {
     letter-spacing: 1px;
     transition: all 0.2s ease;
 }
+.nav-logo-circle {
+    /* show the actual SVG as the background to ensure consistent rendering */
+    background-image: url("../assets/images/txt+logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
 
 .nav-logo:hover .nav-logo-circle {
-    background: #e8e8e8;
+    background-color: #e8e8e8; /* preserve background-image */
     border-color: #333;
 }
+
+/* Hide any fallback <img> inside the logo container once the background is used */
+.nav-logo-circle img { display: none; }
 
 /* Navigation Right Container */
 .nav-right {
