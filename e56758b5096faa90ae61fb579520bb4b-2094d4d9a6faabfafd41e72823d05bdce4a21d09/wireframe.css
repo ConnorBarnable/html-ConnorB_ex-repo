@@ -75,8 +75,7 @@ nav {
     flex-wrap: wrap;
 }
 
-nav::before {
-    content: "NAVIGATION";
+nav:before {
     position: absolute;
     top: -12px;
     left: 10px;
@@ -237,28 +236,32 @@ h6 {
     margin: 20px 0 15px 0;
     font-weight: normal;
     position: relative;
-    background-image: repeating-linear-gradient(90deg,
-            #ddd,
-            #ddd 1px,
-            transparent 1px,
-            transparent 8px);
 }
 
 h1 {
-    font-size: 32px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    border: 2px solid #666;
-    background: #d4d4d4;
+    font-size: 48px;
+  line-height: 56px;
+  letter-spacing: 0.32px;
+  text-align: center;
+  background: transparent; /* Makes the entire SVG completely transparent */
+  background-image: none;
+  forced-color-adjust: auto;
+  outline: none;
+  border: none;
 }
 
 h2 {
-    font-size: 26px;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    border-width: 2px;
+    font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 0.32px;
+  background: transparent; /* Makes the entire SVG completely transparent */
+  background-image: none;
+  forced-color-adjust: auto;
+  outline: none;
+  border: none;
+  text-align: center;
+  padding-right: 100px;
+}
 }
 
 h3 {
@@ -405,11 +408,11 @@ footer {
     margin-top: 30px;
     border-radius: 4px;
     position: relative;
-    background-image: repeating-linear-gradient(0deg,
-            #f0f0f0,
-            #f0f0f0 1px,
-            transparent 1px,
-            transparent 15px);
+    text-align: center;
+    border: 2px solid #666;
+    font-family: "Alegreya", serif;
+    font-variant: var(ffffff);
+
 }
 
 footer::before {
@@ -420,7 +423,7 @@ footer::before {
     background: white;
     padding: 0 8px;
     font-size: 10px;
-    font-weight: bold;
+    font-family: "Alegreya", serif;
     color: #666;
     letter-spacing: 1px;
 }

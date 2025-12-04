@@ -57,9 +57,7 @@ h3 {
   line-height: 36px; /* Increased from 28px to provide better readability */
   letter-spacing: 0.32px;
   font-weight: 700;
-  background-color: var(--moss-green);
-  text-color: #FFFFFF
-  outline: none;
+  text: white;
   border: none;
 }
 
@@ -189,7 +187,34 @@ main {
 }
 
 #scroll-up {
-  position fixed
-  right 20px;
-  bottom 20px
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
 }
+
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  background-color: var(--light-brown);
+  color: white;
+}
+
+img[src*="fugazi-live"] {
+  max-width: 310px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  margin-right: 10px;
+  float:inline-end;
+  position: relative;
+  bottom: 242px;
+}
+
+iframe[src*="youtube"] {
+  max-width: 560px;
+  width: 100%;
+  height: 315px;
+  display: block;
+  margin: 24px auto;
+} 
