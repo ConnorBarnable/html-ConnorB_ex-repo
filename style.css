@@ -2,11 +2,10 @@
 
 body {
   min-height: 100vh;
-  background-color: #e5e5f7;
-  opacity: 1;
-  background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #8A784F 16px), repeating-linear-gradient( #e6efc7);
+  opacity: 1
   font-family: "Alegreya Sans", sans-serif;
-  font-optical-sizing: auto;
+  background-color: var(--mid-green);
+  padding: 10px;
 }
 
 h1, h2, h3 {
@@ -26,6 +25,11 @@ p {
   outline:none;
   border:none;
   text-align: center;
+  justify-content: center;
+  padding: 15px;
+  max-width: 55ch;
+  margin: 25px; 
+  
 }
 
 h1 {
@@ -44,7 +48,8 @@ h2 {
   font-size: 36px;
   line-height: 42px;
   letter-spacing: 0.32px;
-  background:transparent; /* Makes the entire SVG completely transparent */
+  background: transparent; /* Makes the entire SVG completely transparent */
+  background-image: none;
   forced-color-adjust: auto;
   outline: none;
   border: none;
@@ -154,6 +159,7 @@ p, p * {
 /* Ensure list items use the site's Alegreya Sans font */
 li, li * {
   font-family: "Alegreya Sans", sans-serif;
+  align-text: auto;
 }
 
 .nav-logo {
@@ -178,8 +184,7 @@ iframe {
   height: 360px;
   border-radius: 4px;
   border: none;
-  justify-content: center;
-  align-items: center;
+  /* centered via margin auto; no flex properties needed */
 }
 
 main {
@@ -192,23 +197,48 @@ main {
   bottom: 20px;
 }
 
+/* Homepage: center main content vertically and horizontally */
+body.home main {
+  min-height: calc(100vh - 140px); /* leave space for nav + footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background-color: var(--mid-green);
+  background-image: url("assets/images/stockimg.svg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  
+}
+
+
+body.home h2 {
+  margin-left: 100px;
+}
+
+
+
 footer {
   margin-top: 40px;
   padding: 20px;
   text-align: center;
   background-color: var(--light-brown);
   color: white;
+
 }
 
 img[src*="fugazi-live"] {
   max-width: 310px;
   height: auto;
   display: block;
-  margin: 20px auto;
-  margin-right: 10px;
-  float:inline-end;
+  margin: 50px auto;
+  margin-right: 50px;
   position: relative;
-  bottom: 242px;
+  bottom: 10px;
+  margin-left: 180px;
 }
 
 iframe[src*="youtube"] {
@@ -218,3 +248,39 @@ iframe[src*="youtube"] {
   display: block;
   margin: 24px auto;
 } 
+
+img[src*="SDRE-live"] {
+  min-width: 460px;
+  max-height: 750px;
+  display: block;
+  margin: 50px auto;
+  float:inline-start
+  bottom 10px;
+}
+
+main {
+  min-height: calc(100vh - 140px); /* leave space for nav + footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background-color: var(--mid-green);
+  background-image: url("assets/images/stockimg.svg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  
+}
+
+html body {
+  background-color: var(--moss-green);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+ /* background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #8A784F 16px), repeating-linear-gradient( #e6efc7); */
+
+
