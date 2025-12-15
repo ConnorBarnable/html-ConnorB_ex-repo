@@ -16,7 +16,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #fafafa;
+    background-color: transparent;
     padding: 20px;
     max-width: 100%;
     overflow-x: hidden;
@@ -26,12 +26,13 @@ body {
 main {
     max-width: 1200px;
     margin: 0 auto;
-    background: white;
-    border: 2px solid #666;
+    background: var(--light-green);
+    border: 5px solid #666;
     border-radius: 8px;
     padding: 40px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Header Styling */
 header {
@@ -63,7 +64,7 @@ header::before {
 
 /* Navigation Styling - Logo Left, Links Right */
 nav {
-    border: 2px solid #666;
+    border: 5px solid #666;
     background: #f5f5f5;
     padding: 15px;
     margin: 15px 0;
@@ -75,8 +76,7 @@ nav {
     flex-wrap: wrap;
 }
 
-nav::before {
-    content: "NAVIGATION";
+nav:before {
     position: absolute;
     top: -12px;
     left: 10px;
@@ -102,14 +102,15 @@ nav::before {
     outline: 2px solid #005fcc;
     outline-offset: 2px;
     box-shadow: 0 0 0 3px rgba(0, 95, 204, 0.3);
-    border-radius: 50%;
+    border-radius: 6px; /* match rectangular logo rounded corners */
 }
 
 .nav-logo-circle {
-    width: 50px;
-    height: 50px;
+    /* Use a rectangular container to fit the textual SVG logo */
+    width: 150px;
+    height: 40px;
     border: 2px solid #666;
-    border-radius: 50%;
+    border-radius: 6px;
     background: white;
     display: flex;
     align-items: center;
@@ -120,11 +121,21 @@ nav::before {
     letter-spacing: 1px;
     transition: all 0.2s ease;
 }
+.nav-logo-circle {
+    /* show the actual SVG as the background to ensure consistent rendering */
+    background-image: url("../assets/images/txt+logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
 
 .nav-logo:hover .nav-logo-circle {
-    background: #e8e8e8;
+    background-color: #e8e8e8; /* preserve background-image */
     border-color: #333;
 }
+
+/* Hide any fallback <img> inside the logo container once the background is used */
+.nav-logo-circle img { display: none; }
 
 /* Navigation Right Container */
 .nav-right {
@@ -138,13 +149,14 @@ nav::before {
     display: none;
     background: white;
     border: 2px solid #666;
-    border-radius: 4px;
-    padding: 8px 12px;
+    border-radius: 10px;
+    padding: 8px 25px;
     cursor: pointer;
     font-size: 18px;
     line-height: 1;
     color: #333;
     position: relative;
+    margin-left: 25px;
     transition: all 0.3s ease;
 
 }
@@ -203,7 +215,7 @@ nav a:not(.nav-logo) {
 }
 
 nav a:not(.nav-logo):hover {
-    color: #005fcc;
+    color: #999;
 }
 
 nav a:not(.nav-logo):focus {
@@ -219,39 +231,38 @@ h3,
 h4,
 h5,
 h6 {
-    background: #e8e8e8;
-    border: 1px solid #999;
+
     border-radius: 3px;
     padding: 15px 20px;
     margin: 20px 0 15px 0;
     font-weight: normal;
     position: relative;
-    background-image: repeating-linear-gradient(90deg,
-            #ddd,
-            #ddd 1px,
-            transparent 1px,
-            transparent 8px);
 }
 
 h1 {
-    font-size: 32px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    border: 2px solid #666;
-    background: #d4d4d4;
+    font-size: 48px;
+  line-height: 56px;
+  letter-spacing: 0.32px;
+  text-align: center;
+  outline: none;
+  border: none;
 }
 
 h2 {
-    font-size: 26px;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    border-width: 2px;
+    font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 0.32px;
+  background: transparent; /* Makes the entire SVG completely transparent */
+  background-image: none;
+  forced-color-adjust: auto;
+  outline: none;
+  border: none;
+  text-align: center;
+  padding-right: 100px;
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 28px;
     height: 55px;
     display: flex;
     align-items: center;
@@ -280,17 +291,11 @@ h6 {
 
 /* Paragraph Styling */
 p {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
     border-radius: 3px;
     padding: 15px;
     margin: 15px 0;
     line-height: 1.8;
     position: relative;
-    background-image: repeating-linear-gradient(transparent,
-            transparent 20px,
-            #f0f0f0 20px,
-            #f0f0f0 21px);
 }
 
 /* Details/Summary Styling */
@@ -330,19 +335,12 @@ details>*:not(summary) {
 
 /* Image Styling */
 img {
-    border: 2px dashed #999;
-    background: #f0f0f0;
-    padding: 20px;
     display: block;
     margin: 20px 0;
     max-width: 100%;
     height: auto;
     position: relative;
-    background-image: repeating-linear-gradient(45deg,
-            #e8e8e8,
-            #e8e8e8 10px,
-            transparent 10px,
-            transparent 20px);
+    
 }
 
 img::before {
@@ -388,28 +386,25 @@ iframe::before {
 
 /* Footer Styling */
 footer {
-    border: 2px dashed #999;
-    background: #f8f8f8;
     padding: 20px;
     margin-top: 30px;
     border-radius: 4px;
     position: relative;
-    background-image: repeating-linear-gradient(0deg,
-            #f0f0f0,
-            #f0f0f0 1px,
-            transparent 1px,
-            transparent 15px);
+    text-align: right;
+    border: 2px solid #666;
+    font-family: "Alegreya", serif;
+    
+
 }
 
 footer::before {
-    content: "FOOTER";
     position: absolute;
     top: -12px;
     left: 10px;
     background: white;
     padding: 0 8px;
     font-size: 10px;
-    font-weight: bold;
+    font-family: "Alegreya", serif;
     color: #666;
     letter-spacing: 1px;
 }

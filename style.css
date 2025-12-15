@@ -1,7 +1,360 @@
+/* Make navigation list items larger */
+nav[aria-label="Main navigation"] li {
+  font-size: 1.35em;
+}
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:opsz@8..144&family=Alegreya+Sans:opsz@8..144&display=swap");
+
 body {
-    min-height: 100vh;
-    background-color: #e5e5f7;
-    opacity: 1;
-    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e5e5f7 16px),
-        repeating-linear-gradient(#E6EFC755, #E6EFC7);
+  min-height: 100vh;
+  opacity: 1;
+  background-color: var(--mid-green);
+  padding: 10px;
+}
+
+h1, h2, h3 {
+  font-family: "Alegreya", serif;
+  font-optical-sizing: auto;
+}
+
+p {
+  color: #000;
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 21px;
+  line-height: 28px;
+  letter-spacing: 0.4px;
+  background-color: var(--light-brown);
+  background-image: none;
+  forced-color-adjust: auto;
+  outline:none;
+  border:none;
+  text-align: center;
+  justify-content: center;
+  padding: 15px;
+  max-width: 72ch;
+  margin: 25px; 
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: 0.32px;
+  text-align: center;
+  background-image: none;
+  forced-color-adjust: auto;
+  outline: none;
+  border: none;
+  margin-right: 50px;
+  margin-bottom: 45px;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 0.32px;
+  background: transparent; /* Makes the entire SVG completely transparent */
+  background-image: none;
+  forced-color-adjust: auto;
+  outline: none;
+  border: none;
+  text-align: center;
+  padding-right: 100px;
+  margin-left: 35px;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 36px; /* Increased from 28px to provide better readability */
+  letter-spacing: 0.32px;
+  font-weight: 700;
+  border: none;
+  text-align: center;
+}
+
+/* Navigation layout */
+nav[aria-label="Main navigation"] {
+  display: flex;
+  align-items: center;
+  justify-content:baseline;
+  padding:0%;
+  background-color: var(--light-brown);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+.nav-logo img {
+  height: 175px;
+  width: 500px;
+  background:transparent; /* Makes the entire SVG completely transparent */
+  forced-color-adjust: auto;
+  outline: none;
+  border: none; 
+}
+
+
+.nav-right,
+.flex-right {
+  display: flex;
+  align-items: center;
+}
+
+#logo_outer {
+  width: auto;
+  height: auto;
+  /* Use the project asset location for the logo */
+  background-image: url("assets/images/txt+Lgo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#Lgo_outer img {
+  display: none; /* Hide the old image */
+}
+:root {
+  --light-green: #e8efc7;
+  --mid-green: #AEC8A7;
+  --light-brown: #8A784F;
+  --moss-green: #3b3b1b;
+}
+
+/* global styles */
+body, 
+html {
+ overflow-x: hidden;
+ scroll-behavior: smooth; 
+}
+
+.home #scroll-up {
+  display: none;   
+}
+#scroll-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--mid-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 2.5 ease;
+}
+
+#scroll-up:hover {
+  background-color: #8A784F;
+}
+
+
+/* Ensure list items use the site's Alegreya Sans font */
+li, li * {
+  font-family: "Alegreya Sans", sans-serif;
+  align-content: auto;
+}
+
+.nav-logo {
+  background-color:transparent; /* Makes the entire SVG completely transparent */
+}
+
+.identity{
+display: flex;
+flex-direction: column; 
+align-items: center;
+justify-content: center;
+gap: 8px;
+text-align:center;
+padding: 16px;
+} 
+
+iframe {
+  display: block;
+  margin: 24px auto;
+  width: 100vw;
+  min-width: 320px;
+  height: 360px;
+  border-radius: 4px;
+  border: none;
+  /* centered via margin auto; no flex properties needed */
+}
+
+main {
+  overflow-x: scroll;
+}
+
+#scroll-up {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+/* Homepage: center main content vertically and horizontally */
+body.home main {
+  min-height: calc(100vh - 140px); /* leave space for nav + footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background-color: var(--mid-green);
+  background-image: url("assets/images/stockimg.svg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  
+}
+
+
+
+body.home h2 {
+  margin-left: 100px;
+}
+
+
+
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: var(--light-brown);
+  font-family: "Alegreya Sans", sans-serif;
+  text-align: right;
+}
+
+img[src*="fugazi-live"] {
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 50px auto;
+  margin-right: 50px;
+  position: relative;
+  bottom: 10px;
+  margin-left: 180px;
+}
+
+iframe[src*="youtube"] {
+  max-width: 560px;
+  width: 100%;
+  height: 315px;
+  display: block;
+  margin: 24px auto;
+} 
+
+img[src*="SDRE-live"] {
+  min-width: 460px;
+  max-height: 750px;
+  display: block;
+  margin: 50px auto;
+  float:inline-start
+  bottom 10px;
+}
+
+main {
+  min-height: calc(100vh - 140px); /* leave space for nav + footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background-color: var(--mid-green);
+  background-image: url("assets/images/stockimg.svg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-origin: 5px;
+  
+}
+
+html body {
+  background-color: var(--moss-green);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+img[src*="mcr-24"] {
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 50px auto;
+  margin-right: 50px;
+  position: relative;
+  bottom: 10px;
+  margin-left: 180px;
+}
+
+img[src*="tigersjaw"] {
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 50px auto;
+  margin-right: 50px;
+  position: relative;
+  bottom: 10px;
+  margin-left: 180px;
+}
+
+img[src*="sddefault"] {
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 50px auto;
+  margin-right: 50px;
+  position: relative;
+  bottom: 10px;
+  margin-left: 180px;
+}
+
+img[src*="Unknown"] {
+  min-width: 300px;
+  height: auto;
+  display: block;
+  margin: 50px auto;
+  margin-right: 50px;
+  position: relative;
+  bottom: 10px;
+  margin-left: 260px;
+}
+
+img[src*="Rites_of_Spring"] {
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 50px auto;
+  margin-right: 50px;
+  position: relative;
+  bottom: 10px;
+  margin-left: 270px;
+}
+
+img[src*="texas"] {
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 50px auto;
+  margin-right: 50px;
+  position: relative;
+  bottom: 10px;
+  margin-left: 180px;
+}
+
+img[src*="vanna"] {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 50px auto;
+  margin-right: 50px;
+  position: relative;
+  bottom: 10px;
+  margin-left: 270px;
 }
