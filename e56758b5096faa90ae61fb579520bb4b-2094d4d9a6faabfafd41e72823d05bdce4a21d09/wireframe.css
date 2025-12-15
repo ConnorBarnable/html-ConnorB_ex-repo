@@ -416,10 +416,10 @@ footer {
     margin-top: 30px;
     border-radius: 4px;
     position: relative;
-    text-align: center;
+    text-align: right;
     border: 2px solid #666;
     font-family: "Alegreya", serif;
-    font-variant: var(ffffff);
+    
 
 }
 
@@ -595,4 +595,12 @@ footer::before {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+footer img {
+  height: 75px;
+  width: 150px;
+  background-image: url(assets/images/swirly.svg);
+  outline: none;
+  border: none;
 }
