@@ -32,7 +32,6 @@ p {
   padding: 15px;
   max-width: 72ch;
   margin: 25px; 
-  padding-color: var(--light-brown);
 }
 
 h1 {
@@ -40,7 +39,6 @@ h1 {
   line-height: 56px;
   letter-spacing: 0.32px;
   text-align: center;
-  background: transparent; /* Makes the entire SVG completely transparent */
   background-image: none;
   forced-color-adjust: auto;
   outline: none;
@@ -68,7 +66,6 @@ h3 {
   line-height: 36px; /* Increased from 28px to provide better readability */
   letter-spacing: 0.32px;
   font-weight: 700;
-  text: white;
   border: none;
   text-align: center;
 }
@@ -159,10 +156,6 @@ html {
   background-color: #8A784F;
 }
 
-/* Ensure all paragraph text uses Alegreya Sans (including inline elements) */
-p, p * {
-  font-family: "Alegreya Sans", sans-serif;
-}
 
 /* Ensure list items use the site's Alegreya Sans font */
 li, li * {
@@ -233,26 +226,10 @@ body.home h2 {
 footer {
   margin-top: 40px;
   padding: 20px;
-  text-align: center;
   background-color: var(--light-brown);
-  text-align: left;
   font-family: "Alegreya Sans", sans-serif;
   text-align: right;
 }
-
-footer img {
-  background-image: url(assets/images/swirly.svg);
-  height: 75px;
-  width: 150px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  forced-color-adjust: auto;
-  outline: none;
-  border: none;
-
-}
-
 
 img[src*="fugazi-live"] {
   max-width: 500px;
@@ -288,13 +265,13 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 30px;
   background-color: var(--mid-green);
   background-image: url("assets/images/stockimg.svg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-origin: 5px;
   
 }
 
